@@ -1,0 +1,10 @@
+import express from "express";
+// import products from "../data/products.js";
+import Product from "../model/productModel.js";
+import asyncHandler from "../middleWare/asyncHandler.js";
+import { getProductById, getProducts } from "../controllers/productControllers.js";
+
+const router = express.Router();
+router.route("/").get(getProducts);
+router.route("/:id").get(getProductById);
+export default router;
