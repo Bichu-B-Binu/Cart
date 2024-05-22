@@ -8,7 +8,6 @@ export const Footer = () => {
         <Row>
           <Col className="text-center py-3">
             <p>Super Shop &copy; {curentYear}</p>
-            <p>dh</p>
           </Col>
         </Row>
       </Container>
