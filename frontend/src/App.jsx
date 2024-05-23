@@ -4,6 +4,7 @@ import { Footer } from "./components/Footer";
 import { HomeScreens } from "./components/screens/HomeScreens";
 import { Route, Routes } from "react-router-dom";
 import { ProductScreen } from "./components/screens/ProductScreen";
+import CartScreen from "./components/screens/CartScreen";
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeScreens />} />
           <Route path="product/:id" element={<ProductScreen />} />
+          <Route path="/cart" element={<CartScreen/>} />
         </Routes>
       </main>
       <Footer />

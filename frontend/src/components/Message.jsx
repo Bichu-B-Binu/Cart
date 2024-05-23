@@ -1,10 +1,13 @@
 import { Alert } from "react-bootstrap"
-const Message = (variant,childern) => {
-  return (
-    <Alert variant={variant}>{childern}</Alert>
-  )
+// eslint-disable-next-line react/prop-types
+function Message({childern,variant})  {
+  return  <Alert variant={variant}>{childern}</Alert>
+  
 }
+
 Message.defaultProps={
-    variant:"info",
+  variant:"info"
 };
-export default Message
+
+
+export default Message;

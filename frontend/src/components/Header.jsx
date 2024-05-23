@@ -5,7 +5,11 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
 import styles from "./Header.module.css";
 import { LinkContainer } from "react-router-bootstrap";
+import { useSelector } from "react-redux";
+import { Badge } from "react-bootstrap";
 export const Header = () => {
+  const {cartItems}=useSelector((state)=>state.cart)
+  // console.log(cartItems);
   return (
     <>
       <header>
@@ -25,7 +29,14 @@ export const Header = () => {
                 <LinkContainer to={"/cart"}>
                   <Nav.Link className={styles.navIcons}>
                     <FaShoppingCart />
-                    <span className="ps-1 cart">Cart</span>
+                    <span className="ps-1 cart">Cart
+                    {cartItems.length>0&&(
+                      <Badge pill bg="success" style={{marginLeft:"5px"}}>{cartItems.reduce((a,c)=>{
+                        let qty=Number(c.qty);
+                        return a+qty
+                      },0)}</Badge>
+                    )}
+                    </span>
                   </Nav.Link>
                 </LinkContainer>
                 <LinkContainer to={"/login"}>
